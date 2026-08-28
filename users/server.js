@@ -1,11 +1,13 @@
 const epxress = require('express')
 const expressGraphQL = require('express-graphql').graphqlHTTP
+const schema = require('./schema/schema')
 
 const app = epxress()
 const PORT = 4000
 
 
 app.use('/graphQL', expressGraphQL({
+    schema,
     graphiql: true
 }))
 
